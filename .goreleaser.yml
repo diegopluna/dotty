@@ -1,3 +1,4 @@
+version: 2
 builds:
   - env:
       - CG0_ENABLED: 0
