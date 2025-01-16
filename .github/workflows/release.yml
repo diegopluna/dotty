@@ -13,12 +13,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check for changes since last release
-        run: |
-          if [ -z "$(git diff --name-only ${{ env.latest_tag }})" ]; then
-            echo "No changes detected since last release"
-            exit 1
-          fi
+      # - name: Check for changes since last release
+      #   run: |
+      #     if [ -z "$(git diff --name-only ${{ env.latest_tag }})" ]; then
+      #       echo "No changes detected since last release"
+      #       exit 1
+      #     fi
 
       - name: Check for Blocking Issues/PRs
         id: check_blocks
