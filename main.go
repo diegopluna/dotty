@@ -9,7 +9,12 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var version = "dev"
+var (
+	commit      string
+	date        string
+	version     string = "dev"
+	buildSource        = "unkown"
+)
 
 var Upgrade = &cobra.Command{
 	Use:   "upgrade",
@@ -46,7 +51,7 @@ func main() {
 		Short: "Manage your dotfiles like a pro.",
 		Run: func(cmd *cobra.Command, args []string) {
 			if versionFlag {
-				fmt.Println(version)
+				fmt.Printf("dotty version %s, built on commit %s at %s with build source %s\n", version, commit, date, buildSource)
 			} else {
 				fmt.Println("Please provide a subcommand. Run 'dotty --help' for more information.")
 			}
